@@ -122,18 +122,81 @@ Date:   Sun Sep 9 16:47:10 2001 +0000
           </ul>
       </section>
 
-      <section>
-          <h3>Install Drupal and prepare a site</h3>
-          <section>
-              <video class="fragment">
-                  <source data-src="videos/install-drupal.webm" type="video/webm" />
-              </video>
-          </section>
-          <video class="fragment">
-              <source data-src="videos/content-overview.webm" type="video/webm" />
-          </video>
-      </section>
+    </section>
 
+    <section>
+        <h2>Install Drupal and prepare a site</h2>
+        <section>
+            <video>
+                <source data-src="videos/install-drupal.webm" type="video/webm" />
+            </video>
+        </section>
+        <section>
+            <video>
+                <source data-src="videos/content-overview.webm" type="video/webm" />
+            </video>
+        </section>
+    </section>
+
+    <section>
+        <h2>Using Views</h2>
+        <video>
+            <source data-src="videos/article-page-view.webm"  type="video/webm" />
+        </video>
+    </section>
+
+    <section>
+        <h2>Using Views: Instant GET API</h2>
+        <video>
+            <source data-src="videos/article-api-view.webm"  type="video/webm" />
+        </video>
+    </section>
+
+    <section>
+        <h2>Using Views: Simplified</h2>
+        <video>
+            <source data-src="videos/article-api-view-revised.webm"  type="video/webm" />
+        </video>
+    </section>
+
+    <section>
+        <h2>Using Views: Multiple Formats</h2>
+        <section>
+            <video>
+                <source data-src="videos/request-different-formats.webm"  type="video/webm" />
+            </video>
+        </section>
+        <section>
+            <code>curl http://esip.demo:8888/api/articles?_format=json</code>
+            <pre><code class="json" data-trim contenteditable>
+[
+    {
+        "label": "Ea Nulla Ullamcorper",
+        "summary": "Caecus cogo fere modo olim. Dolor elit importunus nunc pala tego. Abico facilisi genitus mos obruo sagaciter si tum."
+    },
+    {
+        "label": "Nisl Sudo",
+        "summary": "Hos natu refero. Accumsan aliquip conventio elit erat ex ratis secundum ymo. Abbas augue facilisi saluto veniam."
+    }
+]
+            </code></pre>
+        </section>
+        <section>
+            <code>curl http://esip.demo:8888/api/articles?_format=xml</code>
+<pre><code class="xml" data-trim contenteditable>
+<?xml version="1.0"?>
+<response>
+    <item key="0">
+        <label>Ea Nulla Ullamcorper</label>
+        <summary>&lt;p&gt;Caecus cogo fere modo olim. Dolor elit importunus nunc pala tego. Abico facilisi genitus mos obruo sagaciter si tum.</summary>
+    </item>
+    <item key="1">
+        <label>Iaceo Macto Torqueo Vel</label>
+        <summary>&lt;p&gt;Abbas comis ideo ille olim paulatim pneum praemitto verto voco. Abigo dolor eu ille patria quidne roto.</summary>
+    </item>
+</response>
+            </code></pre>
+        </section>
     </section>
 
   </div><!-- slides -->
@@ -144,47 +207,47 @@ Date:   Sun Sep 9 16:47:10 2001 +0000
 
 <script>
 
-  // Full list of configuration options available at:
-  // https://github.com/hakimel/reveal.js#configuration
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: true,
+ // Full list of configuration options available at:
+ // https://github.com/hakimel/reveal.js#configuration
+ Reveal.initialize({
+     controls: true,
+     progress: true,
+     history: true,
+     center: true,
 
-    transition: 'slide', // none/fade/slide/convex/concave/zoom
+     transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-    // Optional reveal.js plugins
-    dependencies: [
-      {
-        src: 'lib/js/classList.js', condition: function () {
-        return !document.body.classList;
-      }
-      },
-      {
-        src: 'plugin/markdown/marked.js', condition: function () {
-        return !!document.querySelector('[data-markdown]');
-      }
-      },
-      {
-        src: 'plugin/markdown/markdown.js', condition: function () {
-        return !!document.querySelector('[data-markdown]');
-      }
-      },
-      {
-        src: 'plugin/highlight/highlight.js',
-        async: true,
-        callback: function () {
-          hljs.initHighlightingOnLoad();
-        }
-      },
-      {src: 'plugin/zoom-js/zoom.js', async: true},
-      {src: 'plugin/notes/notes.js', async: true}
-    ]
-  });
+     // Optional reveal.js plugins
+     dependencies: [
+         {
+             src: 'lib/js/classList.js', condition: function () {
+                 return !document.body.classList;
+             }
+         },
+         {
+             src: 'plugin/markdown/marked.js', condition: function () {
+                 return !!document.querySelector('[data-markdown]');
+             }
+         },
+         {
+             src: 'plugin/markdown/markdown.js', condition: function () {
+                 return !!document.querySelector('[data-markdown]');
+             }
+         },
+         {
+             src: 'plugin/highlight/highlight.js',
+             async: true,
+             callback: function () {
+                 hljs.initHighlightingOnLoad();
+             }
+         },
+         {src: 'plugin/zoom-js/zoom.js', async: true},
+         {src: 'plugin/notes/notes.js', async: true}
+     ]
+ });
 
-  // Turn autoSlide off
-  Reveal.configure({ autoSlide: 0 });
+ // Turn autoSlide off
+ Reveal.configure({ autoSlide: 0 });
 
 </script>
 
