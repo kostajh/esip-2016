@@ -133,8 +133,60 @@ xsd: http://www.w3.org/2001/XMLSchema# "
 </div></div></div>  </div>
     </div>
             </code></pre>
-
         </section>
+        <section>
+            <pre><code data-trim class="html">
+<article data-history-node-id="101" role="article" about="/node/101"
+         typeof="schema:Article" class="node node--type-article node--promoted node--view-mode-full clearfix">
+<header>
+  <span property="schema:name" content="Test" class="rdf-meta hidden"></span>
+  <span property="schema:interactionCount" content="UserComments:0"
+        class="rdf-meta hidden"></span>
+<div class="node__meta">
+  <article typeof="schema:Person" about="/user/1" class="profile">
+  </article>
+<span>
+    Submitted by <span rel="schema:author" class="field field--name-uid field--type-entity-reference field--label-hidden">
+    <span lang="" about="/user/1" typeof="schema:Person"
+          property="schema:name" datatype="">admin</span></span>
+    on <span property="schema:dateCreated" content="2016-07-14T14:22:07+00:00"
+             class="field field--name-created field--type-created field--label-hidden">
+        Thu, 07/14/2016 - 14:22</span>
+        </span>
+        <span property="schema:dateCreated" content="2016-07-14T14:22:07+00:00"
+              class="rdf-meta hidden"></span>
+      </div>
+      </header>
+  <div class="node__content clearfix">
+      <div property="schema:text" class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+          <p>Hello</p></div>
+      <section rel="schema:comment" class="field field--name-comment field--type-comment field--label-above comment-wrapper">
+      </section>
+  </div>
+            </article>
+            </code></pre>
+      </section>
+
+      <section>
+          <h3 class="fragment">Strengths</h3>
+          <ul>
+              <li>Out of the box, things "just work" with basic mappings</li>
+              <li>Core support for RDF means developers can rely on a stable API</li>
+          </ul>
+          <h3 class="fragment">Weaknesses</h3>
+          <ul>
+              <li>Problems with mixing RDFa/microdata and HTML markup</li>
+              <ul>
+                  <li>Complex</li>
+                  <li>Field formatters need to be tested</li>
+                  <li>Data is less accessible, you need a special parser</li>
+              </ul>
+              <li>RDF in core hasn't been updated much since Schema.org mappings were added</li>
+              <li>Development on RDF UI isn't moving quickly</li>
+              <li>JSON-LD support is not planned for core, not yet anyway</li>
+          </ul>
+      </section>
+
     </section>
 
     <!-- Fragment styles -->
