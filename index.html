@@ -48,6 +48,7 @@
     <!-- Title slide -->
     <section>
       <h1>REST and RDF in Drupal 8</h1>
+      <h2>How machines can talk to your Drupal</h2>
       <p class="centered">Kosta Harlan @ Savas Labs</p>
     </section>
 
@@ -69,7 +70,7 @@
     <section>
       <h2>What we'll discuss today</h2>
       <ul>
-        <li class="fragment">Semantic Markup (RDF)</li>
+        <li class="fragment">Semantic Markup</li>
         <ul>
             <li class="fragment">A look at Schema.org mappings and RDF support in Drupal 8</li>
         </ul>
@@ -78,7 +79,7 @@
             <blockquote>A Web service is a software system designed to support interoperable machine-to-machine interaction over a network.</blockquote>
         </aside>
         <ul>
-            <li class="fragment">Implementing a RESTful API for a Drupal 8 site</li>
+            <li class="fragment">Implementing a REST API for a Drupal 8 site</li>
         </ul>
       </ul>
     </section>
@@ -170,20 +171,22 @@ xsd: http://www.w3.org/2001/XMLSchema# "
       <section>
           <h3 class="fragment">Strengths</h3>
           <ul>
-              <li>Out of the box, things "just work" with basic mappings</li>
-              <li>Core support for RDF means developers can rely on a stable API</li>
+              <li class="fragment">Out of the box, things "just work" with basic mappings</li>
+              <li class="fragment">Core support for RDF means developers can rely on a stable API</li>
           </ul>
+      </section>
+      <section>
           <h3 class="fragment">Weaknesses</h3>
           <ul>
-              <li>Problems with mixing RDFa/microdata and HTML markup</li>
+              <li class="fragment">Problems with mixing RDFa/microdata and HTML markup</li>
               <ul>
-                  <li>Complex</li>
-                  <li>Field formatters need to be tested</li>
-                  <li>Data is less accessible, you need a special parser</li>
+                  <li class="fragment">Complex</li>
+                  <li class="fragment">Field formatters need to be tested</li>
+                  <li class="fragment">Data is less accessible, you need a special parser</li>
               </ul>
-              <li>RDF in core hasn't been updated much since Schema.org mappings were added</li>
-              <li>Development on RDF UI isn't moving quickly</li>
-              <li>JSON-LD support is not planned for core, not yet anyway</li>
+              <li class="fragment">RDF in core hasn't been updated much since Schema.org mappings were added</li>
+              <li class="fragment">Development on RDF UI isn't moving quickly</li>
+              <li class="fragment">JSON-LD support is not planned for core, not yet anyway</li>
           </ul>
       </section>
 
@@ -303,11 +306,17 @@ Date:   Sun Sep 9 16:47:10 2001 +0000
     </section>
 
     <section>
-        <p>GET node/1?_format=json example</p>
+        <h2>REST UI</h2>
+        <video>
+            <source data-src="videos/rest-ui.webm"  type="video/webm" />
+        </video>
     </section>
 
     <section>
-        <p>POST node/1?_format=json example</p>
+        <h2>Self-Documenting API</h2>
+        <video>
+            <source data-src="videos/self-documenting.webm"  type="video/webm" />
+        </video>
     </section>
 
 
