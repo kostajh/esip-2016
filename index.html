@@ -48,7 +48,6 @@
     <!-- Title slide -->
     <section>
       <h1>REST and RDF in Drupal 8</h1>
-      <h3 class="heading-color">No catchy subtitle here, oh my</h3><br>
       <p class="centered">Kosta Harlan @ Savas Labs</p>
     </section>
 
@@ -70,25 +69,77 @@
     <section>
       <h2>What we'll discuss today</h2>
       <ul>
-        <li class="fragment">Web services</li>
-        <ul>
-            <li class="fragment">Implementing a RESTful API for a Drupal 8 site</li>
-        </ul>
         <li class="fragment">Semantic Markup (RDF)</li>
         <ul>
             <li class="fragment">A look at Schema.org mappings and RDF support in Drupal 8</li>
         </ul>
+        <li class="fragment">Web services</li>
+        <aside class="notes">
+            <blockquote>A Web service is a software system designed to support interoperable machine-to-machine interaction over a network.</blockquote>
+        </aside>
+        <ul>
+            <li class="fragment">Implementing a RESTful API for a Drupal 8 site</li>
+        </ul>
       </ul>
     </section>
 
+    <section>
+        <h2>RDF and Schema.org mappings in D8</h2>
+        <section>
+            <h3>D7</h3>
+            <pre><code data-trim>
+html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+            </code></pre>
+            <h3>D8</h3>
+            <pre><code data-trim>
+html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/
+dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/
+og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#
+schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#
+sioct: http://rdfs.org/sioc/types#
+skos: http://www.w3.org/2004/02/skos/core#
+xsd: http://www.w3.org/2001/XMLSchema# "
+            </code></pre>
+        </section>
+        <section>
+            <pre><code data-trim>
+<div id="node-1" class="node node-article node-promoted node-full clearfix"
+     about="/node/1" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Test" class="rdf-meta element-hidden">
+    </span>
+    <span property="sioc:num_replies" content="0"
+          datatype="xsd:integer"
+          class="rdf-meta element-hidden"></span>
+<div class="meta submitted">
+  <span property="dc:date dc:created" content="2016-07-14T10:12:34-04:00"
+        datatype="xsd:dateTime" rel="sioc:has_creator">
+      Submitted by
+      <span class="username" xml:lang="" about="/user/1"
+            typeof="sioc:UserAccount" property="foaf:name" datatype="">
+            admin</span> on Thu, 07/14/2016 - 10:12</span>    </div>
+  <div class="content clearfix">
+      <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+          <div class="field-items"><div class="field-item even" property="content:encoded">
+              <p>Hello</p>
+</div></div></div>  </div>
+    </div>
+            </code></pre>
+
+        </section>
+    </section>
 
     <!-- Fragment styles -->
     <section>
       <h2>REST in D8</h2>
-      <section>
-          <h3>Definitions</h3>
-          <blockquote>A Web service is a software system designed to support interoperable machine-to-machine interaction over a network.</blockquote>
-      </section>
 
       <section>
           <h3>This isn't something new in Drupal</h3>
@@ -198,6 +249,15 @@ Date:   Sun Sep 9 16:47:10 2001 +0000
             </code></pre>
         </section>
     </section>
+
+    <section>
+        <p>GET node/1?_format=json example</p>
+    </section>
+
+    <section>
+        <p>POST node/1?_format=json example</p>
+    </section>
+
 
   </div><!-- slides -->
 </div><!-- reveal -->
